@@ -10,7 +10,7 @@ class CampoDeTexto extends StatelessWidget {
     super.key,
     required this.controller,
     required this.label,
-    this.icon,  // Ícone opcional
+    this.icon,
     this.obscureText = false,
   });
 
@@ -22,7 +22,7 @@ class CampoDeTexto extends StatelessWidget {
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white.withOpacity(0.8),
-        prefixIcon: icon != null ? Icon(icon) : null,  // Exibe o ícone se for fornecido
+        prefixIcon: icon != null ? Icon(icon) : null,
         labelText: label,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
