@@ -4,7 +4,7 @@ import 'package:EconomyWater/controller/formulario_user.dart';
 import 'package:EconomyWater/view/cadastrar_user.dart';
 import 'package:EconomyWater/widgets/CampoTexto.dart';
 import 'package:flutter/material.dart';
-import '../../controller/conexao_api.dart'; // Importa a classe ServicosApi
+import '../../controller/conexao_api.dart';
 
 class FormularioDeCadastro extends StatelessWidget {
   final UsuarioFormController usuarioController;
@@ -46,7 +46,7 @@ class FormularioDeCadastro extends StatelessWidget {
             const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () async {
-                // Lógica para validar e cadastrar o usuário
+
                 if (usuarioController.nomeController.text.isEmpty ||
                     usuarioController.emailController.text.isEmpty ||
                     usuarioController.senhaController.text.isEmpty ||
@@ -59,7 +59,6 @@ class FormularioDeCadastro extends StatelessWidget {
                     const SnackBar(content: Text("As senhas não coincidem"))
                   );
                 } else {
-                  // Usando a classe ServicosApi para cadastrar o usuário
                   final apiService = ServicosApi();
                   final response = await apiService.cadastrar_usuario(
                     nome: usuarioController.nomeController.text,
@@ -69,9 +68,9 @@ class FormularioDeCadastro extends StatelessWidget {
 
                   if (response.statusCode == 201) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text("Usuário cadastrado com sucesso"))
+                      const SnackBar(content: Text("Usuário cadastrado"))
                     );
-                    Navigator.pop(context); // Voltar para a tela anterior (geralmente login)
+                    Navigator.pop(context);
                   } else {
                     final error = json.decode(response.body)['error'] ?? 'Erro desconhecido';
                     ScaffoldMessenger.of(context).showSnackBar(
