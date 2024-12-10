@@ -21,7 +21,7 @@ class Tela_principalState extends State<Tela_principal> {
   double umidadeSolo = 0.0;
   final ServicosApi APIservicos = ServicosApi();
   late String inicialNome;
-  final Cards cardsWidget = const Cards(); // Instância do Cards
+  final Cards cardsWidget = const Cards(); 
 
   @override
   void initState() {
@@ -63,9 +63,9 @@ class Tela_principalState extends State<Tela_principal> {
         statusBomba = novoStatus;
       });
       //Mensagem('Status da bomba alterado');
-    } /*else {
+    } else {
       Mensagem('Erro para alterar o status da bomba');
-    }*/
+    }
   }
 
   @override
