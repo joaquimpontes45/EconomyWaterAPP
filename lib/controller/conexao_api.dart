@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class ServicosApi {
-  final String BaseDaUrl = 'http://10.0.0.9:5000';//'https://ecowater.etegaranhuns.com.br';
+  final String BaseDaUrl = 'http://10.0.0.9:5000';
 
   Future<http.Response> cadastrar_usuario({
     required String nome,
@@ -67,7 +67,7 @@ class ServicosApi {
     }
   }
 
-  //tela_umidade.dart
+
   Future<Map<String, dynamic>> getStatusSensores() async {
     final String apiUrl = '$BaseDaUrl/status_sensores';
 
