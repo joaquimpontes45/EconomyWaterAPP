@@ -1,0 +1,13 @@
+CREATE OR REPLACE FUNCTION atualiza_log()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO logs (tabela, operacao, data_hora)
+  VALUES (TG_TABLE_NAME, TG_OP, NOW());
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_log
+AFTER INSERT OR UPDATE OR DELETE ON usuarios
+FOR EACH ROW
+EXECUTE FUNCTION atualiza_log();

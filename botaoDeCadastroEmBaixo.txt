@@ -1,0 +1,12 @@
+Align(
+      alignment: Alignment.bottomCenter, // Posiciona o botão no final
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 16.0), // Espaçamento opcional
+        child: CustomButton(
+          text: '',
+          onPressed: () {
+            Navigator.pushNamed(context, '/tela_principal');
+          },
+        ),
+      ),
+    ),
