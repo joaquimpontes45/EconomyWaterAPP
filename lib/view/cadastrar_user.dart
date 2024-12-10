@@ -1,10 +1,9 @@
+import 'package:flutter/material.dart';
 import 'dart:convert';
 
 import 'package:EconomyWater/controller/formulario_user.dart';
 import 'package:EconomyWater/widgets/imagem_fundo.dart';
-import 'package:EconomyWater/widgets/custom_button.dart';
-import 'package:flutter/material.dart';
-import '../controller/conexao_api.dart'; // Importa a classe ApiService
+import '../controller/conexao_api.dart';
 import 'cadastrar_userPartes/formulario_cadastro.dart';
 
 class CadastrarUser extends StatelessWidget {
